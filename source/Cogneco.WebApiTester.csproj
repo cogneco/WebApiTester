@@ -5,6 +5,8 @@
     <VersionPrefix>1.0</VersionPrefix>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<GenerateFullPaths>true</GenerateFullPaths>
+		<PackageId>Cogneco.WebApiTester</PackageId>
+		<IsPackable>true</IsPackable>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Kean" Version="3.0.43" />
