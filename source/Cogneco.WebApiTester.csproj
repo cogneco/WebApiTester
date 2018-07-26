@@ -1,5 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
+    <Description>.NET Core library for testing web API:s created in ASP.NET Core MVC using XUnit.</Description>
+    <Copyright>Simon Mika</Copyright>
+    <VersionPrefix>1.0</VersionPrefix>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<GenerateFullPaths>true</GenerateFullPaths>
 	</PropertyGroup>
