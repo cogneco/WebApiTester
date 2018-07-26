@@ -1,0 +1,23 @@
+language: csharp
+dist: xenial
+sudo: required
+dotnet: 2.1.302
+mono: none
+script:
+  - dotnet restore
+  - dotnet build --configuration Release --version-suffix $TRAVIS_BUILD_NUMBER
+  - dotnet test test/ --configuration Release
+  - dotnet pack source/ --configuration Release
+deploy:
+  skip_cleanup: true
+  provider: script
+  script:
+    - dotnet nuget push source/*/Release/*.nupkg --api-key $MYGET_API_KEY --source https://www.myget.org/F/cogneco/api/v2/package
+    - dotnet nuget push source/*/Release/*.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json
+  on:
+    tags: true
+    condition: $TRAVIS_BRANCH = master
+notifications:
+  email:
+    on_success: never
+    on_failure: always

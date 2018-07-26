@@ -1,12 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-    <Description>.NET Core library for testing web API:s created in ASP.NET Core MVC using XUnit.</Description>
-    <Copyright>Simon Mika</Copyright>
     <VersionPrefix>1.0</VersionPrefix>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<GenerateFullPaths>true</GenerateFullPaths>
-		<PackageId>Cogneco.WebApiTester</PackageId>
 		<IsPackable>true</IsPackable>
+
+		<PackageId>Cogneco.WebApiTester</PackageId>
+		<Authors>Simon Mika</Authors>
+		<Owners>Simon Mika</Owners>
+		<Copyright>Simon Mika, 2018</Copyright>
+		<Title>Web API Tester</Title>
+		<Description>.NET Core library for testing web API:s created in ASP.NET Core MVC using XUnit.</Description>
+		<ProjectUrl>https://github.com/cogneco/webapitester</ProjectUrl>
+		<LicenseUrl>https://github.com/cogneco/WebApiTester/blob/master/LICENSE</LicenseUrl>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageTags>ASP.NET, XUnit, Testing, End-to-end, Web API</PackageTags>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Kean" Version="3.0.43" />
