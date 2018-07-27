@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-    <VersionPrefix>1.0</VersionPrefix>
+    <VersionPrefix>1.0.0</VersionPrefix>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<GenerateFullPaths>true</GenerateFullPaths>
 		<IsPackable>true</IsPackable>
-
+		<PackageVersion>1.0.0.$(VersionSuffix)</PackageVersion>
 		<PackageId>Cogneco.WebApiTester</PackageId>
 		<Authors>Simon Mika</Authors>
 		<Owners>Simon Mika</Owners>
