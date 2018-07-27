@@ -24,7 +24,7 @@ namespace Cogneco.WebApiTester.Test.Persons
 				{
 					using (var fixture = await WebApiTester.AspNetCoreServer.Start<Mockup.Startup>()) {
 						await fixture.Post("/api/persons", new { name = "Elin Blom", age = 21 }).HasContentType("application/json", "utf-8").ContentEquals("{\"name\":\"Elin Blom\",\"age\":21}");
-						await fixture.Get("/api/persons").HasContentType("application/json", "utf-8").ContentEquals("[{\"name\":\"Kurt Strid\",\"age\":25},{\"name\":\"Ann Bok\",\"age\":22}]");
+						await fixture.Get("/api/persons").HasContentType("application/json", "utf-8").ContentEquals("[{\"name\":\"Kurt Strid\",\"age\":25},{\"name\":\"Ann Bok\",\"age\":22},{\"name\":\"Elin Blom\",\"age\":21}]");
 					}
 				}
 				[Fact]
