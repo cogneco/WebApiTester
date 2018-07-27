@@ -41,8 +41,8 @@ If necessary, create a new class that inherits your `Startup.cs` and sets up the
 #### Don't Run in Parallel
 Likely due to issues with running multiple web servers in parallel you need to ensure that your web API tests need to run single threaded. This is the easiest achieved by placing the `Collection` attribute with the same argument on all your test classes containing web API tests like this:
 ``` c#
-	[Collection("WebApiTests")]
-	public class CompareToObject
+[Collection("WebApiTests")]
+public class CompareToObject
 ```
 
 ### Write Tests
@@ -154,6 +154,7 @@ await fixture.Get("/api/persons/1").HasContentType(contentType);
 ```
 ##### Implicitly when asserting the content using an embedded resource
 When asserting the content by comparing against an embedded resource the framework will, if no assert of the content type was performed previously in the chain automatically insert an assert of the content type before asserting the content based on the embedded resources file extension according to the table below. No assertion will be inserted if the framework does not know any content type for the extension.
+
 | Extension | `content-type`            |
 |-----------|---------------------------|
 | json      | `application/json, utf-8` |
