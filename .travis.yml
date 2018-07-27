@@ -5,8 +5,8 @@ dotnet: 2.1.302
 mono: none
 script:
   - dotnet restore
-  - dotnet build --configuration Release --version-suffix $TRAVIS_BUILD_NUMBER
-  - dotnet pack source/ --configuration Release
+  - dotnet build --configuration Release --no-restore --version-suffix $TRAVIS_BUILD_NUMBER
+  - dotnet pack source/ --configuration Release --no-build --version-suffix $TRAVIS_BUILD_NUMBER
 deploy:
   skip_cleanup: true
   provider: script
