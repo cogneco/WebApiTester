@@ -6,6 +6,7 @@ mono: none
 script:
   - dotnet restore
   - dotnet build --configuration Release --no-restore --version-suffix $TRAVIS_BUILD_NUMBER
+  - dotnet test test/ --configuration Release --no-build
   - dotnet pack source/ --configuration Release --no-build --version-suffix $TRAVIS_BUILD_NUMBER
 deploy:
   skip_cleanup: true
