@@ -1,5 +1,6 @@
 # WebApiTester
 A library for testing web API:s created in ASP.NET Core MVC using XUnit.
+
 [![Build Status](https://travis-ci.org/cogneco/WebApiTester.svg?branch=master)](https://travis-ci.org/cogneco/WebApiTester)
 ![NuGet](https://img.shields.io/nuget/v/Cogneco.WebApiTester.svg)
 ![NuGet](https://img.shields.io/nuget/dt/Cogneco.WebApiTester.svg)
