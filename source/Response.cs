@@ -82,6 +82,7 @@ namespace Cogneco.WebApiTester
 		}
 		public void Wait() => this.response.Wait();
 		public async Task AsTask() => await this.response;
+		public System.Runtime.CompilerServices.TaskAwaiter GetAwaiter() => this.AsTask().GetAwaiter();
 		static Http.Headers.MediaTypeHeaderValue GetContentType(string path)
 		{
 			Http.Headers.MediaTypeHeaderValue result;
