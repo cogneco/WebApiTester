@@ -4,6 +4,7 @@ using Tasks = System.Threading.Tasks;
 
 namespace Cogneco.WebApiTester.Test.Values
 {
+		[Collection("WebApiTests")]
 		public class CompareToEmbedded
 		{
 			[Fact]

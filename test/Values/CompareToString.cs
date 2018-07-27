@@ -4,6 +4,7 @@ using Tasks = System.Threading.Tasks;
 
 namespace Cogneco.WebApiTester.Test.Values
 {
+		[Collection("WebApiTests")]
 		public class CompareToString
 		{
 				[Fact]
@@ -18,7 +19,7 @@ namespace Cogneco.WebApiTester.Test.Values
 					using (var fixture = await WebApiTester.AspNetCoreServer.Start<Mockup.Startup>())
 						await fixture.Get("/api/values/5").HasContentType("text/plain", "utf-8").ContentEquals("value5");
 				}
-								[Fact]
+				[Fact]
 				public async Tasks.Task PostCollection()
 				{
 					using (var fixture = await WebApiTester.AspNetCoreServer.Start<Mockup.Startup>()) {
