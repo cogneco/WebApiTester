@@ -13,18 +13,30 @@ namespace Cogneco.WebApiTester
 		}
 		public override async Task Stop()
 		{
-			if (this.host != null)
+			if (this.host != null) {
 				await this.host.StopAsync();
-			this.host = null;
+				this.host.Dispose();
+				this.host = null;
+			}
 		}
 			public static async Task<Fixture> Start<T>() where T: class
 			{
 				string listen = "http://localhost:" + AspNetCoreServer.NextPort();
-				var host = WebHost.CreateDefaultBuilder(new string[0])
-					.UseStartup<T>()
-					.UseUrls(listen)
-					.Build();
-				await host.StartAsync();
+				System.Console.WriteLine(listen);
+				IWebHost host;
+				try
+				{
+					host = WebHost.CreateDefaultBuilder(new string[0])
+						.UseStartup<T>()
+						.UseUrls(listen)
+						.Build();
+					await host.StartAsync();
+				}
+				catch (System.Exception)
+				{
+					host = null;
+					throw;
+				}
 				return host != null ? new Fixture(new AspNetCoreServer(host, listen)) : null;
 			}
 
