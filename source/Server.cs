@@ -13,6 +13,10 @@ namespace Cogneco.WebApiTester
 			public abstract Tasks.Task Stop();
 			void IDisposable.Dispose() => this.Stop().Wait();
 			static int port = 5100;
-			protected static int NextPort() => Server.port++;
+			static object @lock = new object();
+			protected static int NextPort() {
+				lock(Server.@lock)
+					return Server.port++;
+			}
 		}
 }
