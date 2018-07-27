@@ -53,7 +53,7 @@ namespace Cogneco.WebApiTester
 				return response;
 			}).Unwrap());
 		}
-		public Response ContentEquals<T>(T expected) {
+		public Response ContentContains<T>(T expected) {
 		return new Response(this.HasStatus(this.DefaultStatus).HasContentType("application/json", "utf-8").response.Then(async response => {
 				var actual = Json.JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
 				Assert.Equal(expected, actual);

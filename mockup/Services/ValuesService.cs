@@ -10,6 +10,7 @@ namespace Cogneco.WebApiTester.Mockup.Services
 	public class ValuesService : IEnumerable<string>
 	{
 		List<string> backend = new List<string> { "value0", "value1", "value2", "value3", "value4", "value5" };
+		public int Count => this.backend.Count;
 		public string this[int index] {
 			get => this.backend[index];
 			set => this.backend[index] = value;

@@ -23,7 +23,7 @@ namespace Cogneco.WebApiTester.Mockup.Controllers
 		public ActionResult<string> Get(int index) => this.service[index];
 		// POST api/values
 		[HttpPost]
-		public ActionResult<string> Post([FromBody] string value) => this.Created("/api/values/5", this.service.Add(value));
+		public ActionResult<string> Post([FromBody] string value) => this.Created("/api/values/" + (this.service.Count - 1), this.service.Add(value));
 		// PUT api/values/5
 		[HttpPut("{index}")]
 		public ActionResult<string> Put(int index, [FromBody] string value) => this.service[index] = value;

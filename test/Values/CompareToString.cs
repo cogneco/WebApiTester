@@ -6,7 +6,7 @@ namespace Cogneco.WebApiTester.Test.Values
 {
 		public class CompareToString
 		{
-							[Fact]
+				[Fact]
 				public async Tasks.Task GetCollection()
 				{
 					using (var fixture = await WebApiTester.AspNetCoreServer.Start<Mockup.Startup>())
